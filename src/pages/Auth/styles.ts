@@ -1,50 +1,63 @@
 import styled from 'styled-components'
 
-export const AuthContainer = styled.div`
+export const LoginContainer = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
   height: 100vh;
-  background: ${(props) => props.theme.blue};
+  background: ${(props) => props.theme.white};
 
-  div.authBox {
-    background: ${(props) => props.theme.white};
-    padding: 4rem;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.03);
-    border-radius: 0.4rem;
-    text-align: center;
+  .authBox {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 
     img {
       width: 5rem;
     }
 
-    h1 {
-      font-size: 1.6rem;
-      padding: 1rem 0;
-    }
-
-    div.buttonsBox {
+    .lineOrBox {
+      margin-top: 0.5rem;
+      font-size: 0.8rem;
+      width: 100%;
+      max-width: 300px;
       display: flex;
-      flex-direction: column;
       align-items: center;
-      gap: 0.5rem;
-      padding-top: 2.5rem;
+      gap: 1rem;
 
-      button {
-        all: unset;
+      &::before,
+      &::after {
+        content: '';
+        display: block;
         width: 100%;
-        border-radius: 4px;
-        padding: 1rem;
-        text-transform: uppercase;
-        font-weight: 600;
-        border: 2px solid ${(props) => props.theme.blue};
-        cursor: pointer;
-      }
-
-      button.sigupBtn {
-        background: ${(props) => props.theme.blue};
-        color: ${(props) => props.theme.white};
+        height: 1px;
+        background: ${(props) => props.theme['base-placeholder']};
       }
     }
+  }
+`
+
+export const GoogleButton = styled.button`
+  all: unset;
+  width: 100%;
+  max-width: 300px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  margin-top: 1.5rem;
+  gap: 1rem;
+  background: ${(props) => props.theme.white};
+  border: 1px solid ${(props) => props.theme['base-border']};
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 0.3s ease;
+
+  > svg {
+    height: 1.4rem;
+    margin-left: 1rem;
+  }
+
+  &:hover {
+    background: ${(props) => props.theme['base-input']};
   }
 `

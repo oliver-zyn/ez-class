@@ -1,0 +1,10 @@
+import { AuthButtonContainer } from './styles'
+import { ReactNode } from 'react'
+
+interface AuthButtonProps {
+  children: ReactNode
+}
+
+export function AuthButton({ children }: AuthButtonProps) {
+  return <AuthButtonContainer>{children}</AuthButtonContainer>
+}

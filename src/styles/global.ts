@@ -24,7 +24,7 @@ export const GlobalStyle = createGlobalStyle`
   }
  
   body::-webkit-scrollbar-thumb {
-    background-color: ${(props) => props.theme['base-hover']};
+    background-color: ${(props) => props.theme['base-text']};
     border-radius: 4px;
   }
 
@@ -36,6 +36,15 @@ export const GlobalStyle = createGlobalStyle`
   input:focus {
     box-shadow: none;
     outline: 1px solid ${(props) => props.theme['blue-dark']};
+  }
+
+  a {
+    color: ${(props) => props.theme.blue};
+    text-decoration: none;
+
+    &:hover {
+      text-decoration: underline;
+    }
   }
 
   @media (max-width: 900px) {
