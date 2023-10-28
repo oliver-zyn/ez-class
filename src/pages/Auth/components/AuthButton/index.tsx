@@ -6,5 +6,5 @@ interface AuthButtonProps {
 }
 
 export function AuthButton({ children }: AuthButtonProps) {
-  return <AuthButtonContainer>{children}</AuthButtonContainer>
+  return <AuthButtonContainer type="submit">{children}</AuthButtonContainer>
 }

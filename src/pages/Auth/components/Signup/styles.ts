@@ -1,6 +1,7 @@
 import styled from 'styled-components'
+import { Form } from 'formik'
 
-export const SignupContainer = styled.div`
+export const SignupContainer = styled(Form)`
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -10,12 +11,12 @@ export const SignupContainer = styled.div`
     margin: 1rem 0;
   }
 
-  .signUpText {
+  .LoginText {
     font-size: 0.9rem;
     margin: 0.6rem 0 1rem;
   }
 
-  .signUpLink {
+  .LoginLink {
     color: ${(props) => props.theme.blue};
     cursor: pointer;
   }
