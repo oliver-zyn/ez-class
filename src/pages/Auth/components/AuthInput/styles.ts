@@ -2,10 +2,10 @@ import styled from 'styled-components'
 import { Field } from 'formik'
 
 interface AuthInputProps {
-  isError?: boolean
+  haserror: boolean
 }
 
-export const AuthInputContainer = styled.div<AuthInputProps>`
+export const AuthInputContainer = styled.div`
   display: flex;
   flex-direction: column;
   position: relative;
@@ -31,12 +31,13 @@ export const AuthInputContainer = styled.div<AuthInputProps>`
   }
 `
 
-export const Input = styled(Field)`
+export const Input = styled(Field)<AuthInputProps>`
   width: 100%;
   height: 50px;
   padding: 0 1.5rem 0 3rem;
   border: 1px solid
-    ${(props) => (props.isError ? props.theme.red : props.theme['base-border'])};
+    ${(props) =>
+      props.haserror ? props.theme.red : props.theme['base-border']};
   border-radius: 5px;
   outline: none;
   background-color: ${(props) => props.theme.white};

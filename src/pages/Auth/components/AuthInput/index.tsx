@@ -1,22 +1,31 @@
 import { AuthInputContainer, Input } from './styles'
 import { IconProps } from 'phosphor-react'
-import { ErrorMessage } from 'formik'
+import { ErrorMessage, FieldProps } from 'formik'
 
-interface AuthInputPros {
-  type: 'text' | 'password'
-  name: string
+interface InputFieldProps extends FieldProps {
   placeholder: string
   icon: IconProps
 }
 
-export function AuthInput({ type, name, placeholder, icon }: AuthInputPros) {
+export function AuthInput({
+  field,
+  form: { touched, errors },
+  placeholder,
+  icon,
+  ...props
+}: InputFieldProps) {
   return (
     <AuthInputContainer>
       <div className="inputBox">
         <>{icon}</>
-        <Input type={type} name={name} placeholder={placeholder} />
+        <Input
+          {...field}
+          {...props}
+          placeholder={placeholder}
+          haserror={touched[field.name] && errors[field.name]}
+        />
       </div>
-      <ErrorMessage className="errorMsg" component="div" name={name} />
+      <ErrorMessage name={field.name} component="div" className="errorMsg" />
     </AuthInputContainer>
   )
 }
